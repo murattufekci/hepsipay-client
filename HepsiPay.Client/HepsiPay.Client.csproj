@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8A32018-4477-4FF8-B1BC-98B746ED033E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HepsiPay.Client</RootNamespace>
+    <AssemblyName>HepsiPay.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiBase.cs" />
+    <Compile Include="HepsiPayApi.cs" />
+    <Compile Include="IApiBase.cs" />
+    <Compile Include="IHepsiPayApi.cs" />
+    <Compile Include="Messages\AddressInfo.cs" />
+    <Compile Include="Messages\BaseResponse.cs" />
+    <Compile Include="Messages\BasketItem.cs" />
+    <Compile Include="Messages\Card.cs" />
+    <Compile Include="Messages\Customer.cs" />
+    <Compile Include="Messages\DeleteCardRequest.cs" />
+    <Compile Include="Messages\DeleteCardResponse.cs" />
+    <Compile Include="Messages\MakePaymentRequest.cs" />
+    <Compile Include="Messages\MakePaymentResponse.cs" />
+    <Compile Include="Messages\GetAuthenticationTokenResponse.cs" />
+    <Compile Include="Messages\GetAuthenticationTokeRequest.cs" />
+    <Compile Include="Messages\HepsiPayRequest.cs" />
+    <Compile Include="Messages\MerchantCardDto.cs" />
+    <Compile Include="Messages\PagerState.cs" />
+    <Compile Include="Messages\QueryCardsRequest.cs" />
+    <Compile Include="Messages\QueryCardsResponse.cs" />
+    <Compile Include="Messages\SaveCardRequest.cs" />
+    <Compile Include="Messages\SaveCardResponse.cs" />
+    <Compile Include="Messages\TokenBasedRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
